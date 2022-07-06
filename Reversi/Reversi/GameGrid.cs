@@ -27,5 +27,22 @@ namespace Reversi
 
             _grid = new int[rows, columns];
         }
+
+        public Position[] GetValidMoves(Position currentPosition)
+        {
+            //todo
+            return new Position[];
+        }
+
+        public Position[] GetAllValidMoves(int currentPlayer)
+        {
+            //todo foreach piesa a playerului GetValidMoves
+            return new Position[];
+        }
+
+        public void Update(Position pressedPosition)
+        {
+            //todo propaga caturarea
+        }
     }
 }
