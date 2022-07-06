@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V7lcTdWTcdB9rqYSVjQC+uZktjaJqNhjC9gFj/7fez1AY6E/tYwIzc7h8Pm+ggtOhg/UQhen8UVOSg1dBXrTFA==",
+  "dgSpecHash": "1DAtFdUHBZRsg3T7DKz/sL7b15Wjo4c9NScw80Lj/zYajqoqQY9JlXF/0YJ0pC23i9y4mENL7SilpFfPLOycFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\student\\Desktop\\Reversi\\Reversi\\Reversi.csproj",
+  "projectFilePath": "C:\\Users\\student\\Documents\\GitHub\\Reversi\\Reversi\\Reversi\\Reversi.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

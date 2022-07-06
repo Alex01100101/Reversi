@@ -17,9 +17,11 @@ namespace Reversi
 {
     public partial class MainWindow : Window
     {
+        private Game _game;
         public MainWindow()
         {
             InitializeComponent();
+            _game = new Game();
         }
     }
 }

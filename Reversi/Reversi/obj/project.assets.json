@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\Reversi\\Reversi\\Reversi.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Documents\\GitHub\\Reversi\\Reversi\\Reversi\\Reversi.csproj",
       "projectName": "Reversi",
-      "projectPath": "C:\\Users\\student\\Desktop\\Reversi\\Reversi\\Reversi.csproj",
+      "projectPath": "C:\\Users\\student\\Documents\\GitHub\\Reversi\\Reversi\\Reversi\\Reversi.csproj",
       "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\Reversi\\Reversi\\obj\\",
+      "outputPath": "C:\\Users\\student\\Documents\\GitHub\\Reversi\\Reversi\\Reversi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
