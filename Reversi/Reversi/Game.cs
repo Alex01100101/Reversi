@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Reversi
 {
-    public class Game
+    public class Game : INotifyPropertyChanged
     {
         public GameGrid GameGrid { get; private set; }
 
@@ -19,6 +20,7 @@ namespace Reversi
             private set
             {
                 _gameOver = value;
+                OnPropertyChanged(nameof(GameOver));
             }
         }
 
@@ -30,6 +32,7 @@ namespace Reversi
             private set
             {
                 _scoreBlack = value;
+                OnPropertyChanged(nameof(ScoreBlack));
             }
         }
         private int _scoreWhite;
@@ -40,6 +43,7 @@ namespace Reversi
             private set
             {
                 _scoreWhite = value;
+                OnPropertyChanged(nameof(ScoreWhite));
             }
         }
 
@@ -62,19 +66,23 @@ namespace Reversi
 
         public void Reset()
         {
-            _gameOver = false;
+            GameGrid = new GameGrid(rows: 8, columns: 8);
+            GameOver = false;
             _player = 1;
-            _scoreBlack = 0;
-            _scoreWhite = 0;
-            ValidMoves = new Position[50];
+            ScoreBlack = 2;
+            ScoreWhite = 2;
+            ValidMoves = new Position[] { };
         }
 
         public bool IsGameOver()
         {
-            //todo logic
-            ValidMoves = GameGrid.GetAllValidMoves(_player);
-            if (ValidMoves.Length == 0)
+            Position[] ValidMoves1 = GameGrid.GetAllValidMoves(1);
+            Position[] ValidMoves2 = GameGrid.GetAllValidMoves(2);
+            if (ValidMoves1.Length == 0 && ValidMoves2.Length == 0)
+            {
+                GameOver = true;
                 return true;
+            }
             return false;
         }
 
@@ -93,7 +101,30 @@ namespace Reversi
 
         public void Move(Position pressedPosition)
         {
-            GameGrid.Update(pressedPosition);
+            int numberTurned=GameGrid.Update(pressedPosition,_player);
+            if (_player == 1)
+            {
+                _player = 2;
+                ScoreBlack += numberTurned + 1;
+                ScoreWhite -= numberTurned;
+            }
+            else
+            {
+                _player = 1;
+                ScoreWhite += numberTurned + 1;
+                ScoreBlack -= numberTurned;
+            }
         }
+
+        #region INotifyPropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #endregion
     }
 }
