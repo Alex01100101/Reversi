@@ -22,6 +22,7 @@ namespace Reversi
         {
             InitializeComponent();
             _game = new Game();
+            _game = new Game();
         }
     }
 }
