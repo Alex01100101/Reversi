@@ -22,24 +22,24 @@ namespace Reversi
             }
         }
 
-        private int _scoreBlack;
+        private int _scoreBlue;
 
-        public int ScoreBlack
+        public int ScoreBlue
         {
-            get => _scoreBlack;
+            get => _scoreBlue;
             private set
             {
-                _scoreBlack = value;
+                _scoreBlue = value;
             }
         }
-        private int _scoreWhite;
+        private int _scoreRed;
 
-        public int ScoreWhite
+        public int ScoreRed
         {
-            get => _scoreWhite;
+            get => _scoreRed;
             private set
             {
-                _scoreWhite = value;
+                _scoreRed =value;
             }
         }
 
@@ -48,7 +48,7 @@ namespace Reversi
         public int Player
         {
             get => _player;
-            private set
+             set
             {
                 _player = value;
             }
@@ -64,8 +64,8 @@ namespace Reversi
         {
             _gameOver = false;
             _player = 1;
-            _scoreBlack = 0;
-            _scoreWhite = 0;
+            _scoreBlue = 0;
+            _scoreRed = 0;
             ValidMoves = new Position[50];
         }
 
@@ -78,7 +78,9 @@ namespace Reversi
             return false;
         }
 
-        public Position[] ShowMoves()
+        
+
+        public Position[] ShowMoves(int _player)
         {
             ValidMoves = GameGrid.GetAllValidMoves(_player);
             if (ValidMoves.Length == 0)
@@ -91,9 +93,18 @@ namespace Reversi
             return ValidMoves;
         }
 
-        public void Move(Position pressedPosition)
+        public void Move(Position pressedPosition, int player)
         {
-            GameGrid.Update(pressedPosition);
+            if (player == 1)
+            {
+                _player = 2;
+                GameGrid.Update(pressedPosition, player);
+            }
+            if(player==2)
+            {
+                _player = 1;
+                GameGrid.Update(pressedPosition, player);
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Reversi
 
         public bool IsValid()
         {
-            return (Row>0&&Row<=8)&&(Column>0&&Column<=8);
+            return (Row>=0&&Row<8)&&(Column>=0&&Column<8);
         }
     }
 }
