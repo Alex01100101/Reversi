@@ -60,7 +60,7 @@ namespace Reversi
 
         public Game()
         {
-            GameGrid = new GameGrid(rows: 8, columns: 8);
+            //GameGrid = new GameGrid(rows: 8, columns: 8);
             Reset();
         }
 
@@ -96,6 +96,7 @@ namespace Reversi
                 else
                     _player = 1;
             }
+            ValidMoves = GameGrid.GetAllValidMoves(_player);
             return ValidMoves;
         }
 

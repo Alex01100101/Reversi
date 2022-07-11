@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Git\Reversi\Reversi\Reversi\obj\Debug\net6.0-windows\
+C:\Users\student\Documents\GitHub\Reversi\Reversi\Reversi\obj\Debug\net6.0-windows\
 Reversi
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Git\Reversi\Reversi\Reversi\App.xaml
+C:\Users\student\Documents\GitHub\Reversi\Reversi\Reversi\App.xaml
 11407045341
 
 102050687489
 194-97651837
 MainWindow.xaml;
 
-True
+False
 

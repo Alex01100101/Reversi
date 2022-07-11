@@ -113,7 +113,7 @@ namespace Reversi
                 {
                     _tiles[i, j].IsHitTestVisible = false;
                 }
-             Position[] positions = _game.ShowMoves();
+            Position[] positions = _game.ShowMoves();
             foreach (Position position in positions)
             {
                 _tiles[position.Row, position.Column].IsHitTestVisible = true;
