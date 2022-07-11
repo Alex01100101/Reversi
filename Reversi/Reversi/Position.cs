@@ -15,15 +15,17 @@ namespace Reversi
             Row = row;
             Column = column;
         }
-        public void Apply(Offset offset)
+        public Position Apply(Offset offset)
         {
-            Row += offset.RowOffset;
-            Column+=offset.ColumnOffset;
+            var position=new Position(Row, Column); 
+            position.Row += offset.RowOffset;
+            position.Column+=offset.ColumnOffset;
+            return position;
         }
 
         public bool IsValid()
         {
-            return (Row>0&&Row<=8)&&(Column>0&&Column<=8);
+            return (Row>=0&&Row<8)&&(Column>=0&&Column<8);
         }
     }
 }
