@@ -5,6 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Reversi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="MainWindow" Height="480" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="460" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="460"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0"
+                  Grid.Column="0"
+                  x:Name="visualGrid"
+                  Margin="0,0,0,20"  >
+            <Grid />
+        </Grid>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Center" />
+        <Label x:Name="labelScoreBlue" Grid.Column="1" Content="Label" HorizontalAlignment="Center" Margin="39,120,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Light" Foreground="#FF2B52EF"/>
+        <Label x:Name="labelScoreRed" Grid.Column="1" Content="Label" HorizontalAlignment="Center" Margin="39,94,0,0" VerticalAlignment="Top" FontFamily="Bookman Old Style" FontSize="18" FontWeight="Light" Foreground="#FFDC1313"/>
+        <TextBox x:Name="GameTitle" Grid.Column="1" HorizontalAlignment="Left" Margin="113,32,0,0" TextWrapping="Wrap" Text="REVERSI" VerticalAlignment="Top" Width="120" TextAlignment="Center" FontFamily="Bookman Old Style" FontSize="22" IsReadOnly="True" Foreground="#FF260DDC" BorderBrush="White" Background="White" FontWeight="SemiBold"/>
+    </Grid>
 </Window>
