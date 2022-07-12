@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Reversi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1000">
+        Title="MainWindow" Height="1200" Width="1000">
     <Window.Resources>
         <local:VisibilityConverter x:Key="VisibilityConverter" />
     </Window.Resources>

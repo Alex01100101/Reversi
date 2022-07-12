@@ -101,6 +101,11 @@ namespace Reversi
             else
             {
                 _game.Reset();
+                for (int i = 0; i < _game.GameGrid.Rows; i++)
+                    for (int j = 0; j < _game.GameGrid.Columns; j++)
+                    {
+                        _tiles[i, j].IsHitTestVisible = false;
+                    }
                 DrawGrid(_game.GameGrid);
             }
 
